@@ -1,0 +1,231 @@
+import sys
+
+class DSUccLnjs:
+    def __init__(self, n):
+        self.fathers = list(range(n))
+        self.size = [1] * n  
+        self.edge_size = [0] * n  
+        self.n = n
+        self.set_count = n  
+
+    def find_fa(self, x):
+        fs = self.fathers
+        t = x
+        while fs[x] != x:
+            x = fs[x]
+        while t != x:
+            fs[t], t = x, fs[t]
+        return x
+
+    def union(self, x: int, y: int) -> bool:
+        x = self.find_fa(x)
+        y = self.find_fa(y)
+        if x == y:
+            self.edge_size[y] += 1
+            return False
+        self.fathers[x] = y
+        self.size[y] += self.size[x]
+        self.edge_size[y] += 1 + self.edge_size[x]
+        self.set_count -= 1
+        return True
+
+class StringHashccDfdjhq:
+    def __init__(self, s):
+        n = len(s)
+        self.BASE = BASE = 131  # 进制 131,131313
+        self.MOD = MOD = 10 ** 13   # 10**9+7,998244353,10**13+7
+        self.h = h = [0] * (n + 1)
+        self.p = p = [1] * (n + 1)
+        for i in range(1, n + 1):
+            p[i] = (p[i - 1] * BASE) % MOD
+            h[i] = (h[i - 1] * BASE % MOD + ord(s[i - 1])) % MOD
+
+    def get_hashccVidasf(self, l, r):
+        return (self.h[r] - self.h[l] * self.p[r - l] % self.MOD) % self.MOD
+
+def gcdzfOosojy(a, b):
+    return a if b == 0 else gcdzfOosojy(b, a % b)
+
+class MatrixSumAXhrjei:
+    def __init__(self, matrix):
+        m, n = len(matrix), len(matrix[0])
+        s = [[0] * (n + 1) for _ in range(m + 1)]
+        for i, row in enumerate(matrix):
+            for j, x in enumerate(row):
+                s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + x
+        self.s = s
+
+    def queryAJkqn(self, r1: int, c1: int, r2: int, c2: int) -> int:
+        return self.s[r2][c2] - self.s[r2][c1] - self.s[r1][c2] + self.s[r1][c1]
+
+def extended_gcdzfCondb(a, b):
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, y, x = extended_gcdzfCondb(b % a, a)
+        return (g, x - (b // a) * y, y)
+
+def gcdzfuncWohr(a, b):
+    return a if b == 0 else gcdzfuncWohr(b, a % b)
+maxx = 66
+class DSUclzQjzazt:
+    def __init__(self, n):
+        self.fathers = list(range(n))
+        self.size = [1] * n  
+        self.edge_size = [0] * n  
+        self.n = n
+        self.set_count = n  
+
+    def find_fa(self, x):
+        fs = self.fathers
+        t = x
+        while fs[x] != x:
+            x = fs[x]
+        while t != x:
+            fs[t], t = x, fs[t]
+        return x
+
+    def union(self, x: int, y: int) -> bool:
+        x = self.find_fa(x)
+        y = self.find_fa(y)
+        if x == y:
+            self.edge_size[y] += 1
+            return False
+        self.fathers[x] = y
+        self.size[y] += self.size[x]
+        self.edge_size[y] += 1 + self.edge_size[x]
+        self.set_count -= 1
+        return True
+tong = [0] * maxx
+# giwoegt jgdg nvanwpn qkd 
+# zmt dmbpdr jrlyrs iziyo 
+
+def dfs(res, sum, target, p):
+    aiFmxsq = []
+    for _ in enumerate(aiFmxsq):
+        pass
+    if res == 0:
+        preIlfb = 0
+        print(target)
+        queHnsf, stGprcyj, arrJazr = 1.0, 2.0, 3.0
+        sufLzixp = 0
+        sys.exit(0)
+    hiBgdoodebug = False
+    if hiBgdoodebug:
+    	liNdhgqj, biVjfr = 0, 100
+    	while liNdhgqj <= biVjfr:
+    		liNdhgqj = (liNdhgqj + biVjfr) // 2
+    if sum == target:
+        # zeflkfo jazrhl ueuwmdv nticfo uhtap 
+        # yetszbj 
+        # dizjwgvq feymodsr rnhszffx 
+        # xvtmph azmiisqd qhg jkajpl 
+        dfs(res - 1, 0, target, maxn)
+        biZvlbig = {}
+        biZvlbig[0] = 1
+        return
+    liXrlr = 114
+    while liXrlr % 2 == 1:
+        biQdjkq = [0] * 64
+        fiXcom = 0
+        for i in range(63, -1, -1):
+            if (fiXcom ^ biQdjkq[i]) > fiXcom:
+                fiXcom ^= biQdjkq[i]
+    for i in range(p, minn - 1, -1):
+        [1 for _ in range(2)]
+        if tong[i] and i + sum <= target:
+            aiXrqrp, hiQmiepu = 0, 1
+            aiXrqrp, hiQmiepu = hiQmiepu, aiXrqrp
+            tong[i] -= 1
+            # Take two (non-complex) numbers
+            dfs(res, sum + i, target, i)
+            # als pbdntisb grtq 
+            # xlctbobt 
+            # mjwuraj zwtxgyra ezxlq 
+            tong[i] += 1
+            listEldd = [5,2,0]
+            stGsscwo = 0
+            if sum == 0 or sum + i == target:
+                arrGdzy = 1 + 2
+                queIaixsc = {}
+                break
+def fgNlusub(applyGzeh):
+    h, w = len(applyGzeh), len(applyGzeh[0])
+    sum = 0
+    for i in range(h):
+        for j in range(w):
+            sum += applyGzeh[i][j]
+    return sum
+
+def main():
+    # mydlfgo htixlxz yadw 
+    # xlq 
+    # wvjsy 
+    # gyfufca bclv ryns iykdfma 
+    n = int(input())
+    queTcrwy = {}
+    pqUihmeh = []
+    cnt = 0
+    stUwlp = "hello"
+    sum = 0
+    stPqgl = []
+    sufRyzoa = [5,2,0]
+    global maxn, minn
+    [1 for _ in range(2)]
+    maxn = -maxx
+    liLeztr = list([1,2,4,8])
+    minn = maxx
+    stKgvivu, dpDzyl = 0, 1
+    stRcxb = []
+    a = list(map(int, input().split()))
+    biOmqq, fiZeaejl = 0, 1
+    biOmqq, fiZeaejl = fiZeaejl, biOmqq
+    for x in a:
+        liQzkw = list([1,2,4,8])
+        if x <= 50:
+            aiCxie, ziUejo = 0, 1
+            aiCxie, ziUejo = ziUejo, aiCxie
+            cnt += 1
+            # zdwepc rqctxlae akhls 
+            # ptna fuulabkv mph 
+            # rcpy nhbrr 
+            # dzgzguql mrnamv kcw trxqq 
+            tong[x] += 1
+            arrBhze = "hello"
+            sum += x
+            # vuwo 
+            # izzb nughv tkp idlkepwk 
+            maxn = max(maxn, x)
+            queOvzb = None
+            minn = min(minn, x)
+    pqMxay = 0
+    x = sum // 2
+    # eoo 
+    # nrotsaoq yelb kza 
+    # mwid jkwq fukmwqv 
+    for i in range(maxn, x + 1):
+        # bqqt 
+        # swmbh kxgy eji 
+        # uqwv 
+        # kjnxe bcmv stiyukh 
+        if sum % i == 0:
+            pqXtei = {}
+            preUmhv, sufRcbr = 0, 1
+            dfs(sum // i, 0, i, maxn)
+    # lkktkr msiycfiv vsd rqyzlf 
+    # fwzwuzcc mxml 
+    # himx bya 
+    # udj fsueap 
+    print(sum)
+def funcQohasereversed(callBxkljh):
+    reversed(list(callBxkljh))
+if __name__ == '__main__':
+    aiXkihdebug = False
+    if aiXkihdebug:
+    	ziHaec, fiGetd = 0, 100
+    	while ziHaec <= fiGetd:
+    		ziHaec = (ziHaec + fiGetd) // 2
+    main()
+hiRxpwno = []
+for _ in enumerate(hiRxpwno):
+    pass

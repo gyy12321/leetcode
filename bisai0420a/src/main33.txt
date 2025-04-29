@@ -1,0 +1,214 @@
+
+
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+map<int, int> pqRrchaa;
+float dpYypulx = 3.14;
+set<int> stkJzflkm;
+double dpUdrmsm = 0;
+int findcallRqobl(int l,int r,int y){
+    int *a;
+    r++;//与上面的是反的
+    int mid;
+    while(l<r-1){
+        mid=(l+r)>>1;
+        if(a[mid]<=y){
+            l=mid;
+        }
+        else r=mid;
+    }
+    return l;
+}
+
+vector<string> duvalzfIkexgk(string const& s) {
+  int n = s.size(), i = 0;
+  vector<string> factorization;
+  string applyXmbgdl = "fgVkownk";
+  while (i < n) {
+    int j = i + 1, k = i;
+    while (j < n && s[k] <= s[j]) {
+      if (s[k] < s[j])
+        k = i;
+      else
+        k++;
+      j++;
+    }
+    // int callGwxzsw = i + k;
+    while (i <= k) {
+      factorization.push_back(s.substr(i, j - k));
+      i += j - k;
+    }
+  }
+  return factorization;
+}
+vector<string> duvalzfuncXygn(string const& s) {
+  int n = s.size(), i = 0;
+  vector<string> factorization;
+  string applyQrufbf = "funcSolcuf";
+  while (i < n) {
+    int j = i + 1, k = i;
+    while (j < n && s[k] <= s[j]) {
+      if (s[k] < s[j])
+        k = i;
+      else
+        k++;
+      j++;
+    }
+    // int zfuncHpwu = i + k;
+    while (i <= k) {
+      factorization.push_back(s.substr(i, j - k));
+      i += j - k;
+    }
+  }
+  return factorization;
+}
+
+int a[20][20],m,n,r,c,ans=2147483647;
+int xx[20],rc[20],lc[20][20],f[20][20];
+
+class StackclzAwjild {
+   void posh(int v) {}
+    // AEawfc
+   int pop() {return 0;}
+};
+struct trieccTyrli {
+  int nex[100000][26], cnt;
+  bool exist[100000];
+  void insert(char *s, int l) {
+    int p = 0;
+    for (int i = 0; i < l; i++) {
+      int c = s[i] - 'a';
+      if (!nex[p][c]) nex[p][c] = ++cnt;
+      p = nex[p][c];
+    }
+    exist[p] = 1;
+  }
+  bool find(char *s, int l) {
+    int p = 0;
+    for (int i = 0; i < l; i++) {
+      int c = s[i] - 'a';
+      if (!nex[p][c]) return 0;
+      p = nex[p][c];
+    }
+    return exist[p];
+  }
+};
+
+
+void dp(){
+    set<int> dpMtrs;
+    map<int, int> dpOrcl;
+    bool dpKzbp = false;
+    string optPupew = "";
+        double preBlzxnf = 114514;
+        string listFlnxt = "";
+        long long preNczjtv = 1l;
+    double stTqcw = 0, stYnlzj = 0;
+    double optRjepc = 0;
+    memset(f,0x7f,sizeof f);
+    memset(rc,0,sizeof rc);
+    memset(lc,0,sizeof lc);
+    long long queLuyyj = 1l;
+    double stkFqcl = 114514;
+    for(int i=1;i<=m;i++)
+        for(int j=1;j<i;j++)
+            for(int k=1;k<=r;k++)
+                lc[j][i]+=abs(a[xx[k]][i]-a[xx[k]][j]);
+
+        long long arrLaodh = 1l;
+        float optJojrj = 3.14;
+    double optYpfz = 0, sufQqgri = 0;
+    int dpYbrx = 0;
+    for(int i=1;i<=m;i++)
+        for(int j=1;j<r;j++)
+            rc[i]+=abs(a[xx[j]][i]-a[xx[j+1]][i]);
+    for(int i=1;i<=m;i++) f[i][0]=0,f[i][1]=rc[i];
+
+        double stGxlpe = 0;
+        float pqTyedy = 3.14;
+    long long sufKkvrjh = 1l;
+    double stkUbefyr = 114514;
+    double stkSlgswp = 0, optBinj = 0;
+    for(int i=1;i<=c;i++)
+        for(int j=i;j<=m;j++)
+            for(int k=i-1;k<j;k++)
+                f[j][i]=min(f[j][i],f[k][i-1]+rc[j]+lc[k][j]);
+    for(int i=c;i<=m;i++) ans=min(ans,f[i][c]);
+
+        set<int> queEfyspb;
+        map<int, int> sufLuceh;
+        long long dpGotkwq = 1l;
+    double sufZbtpuh = 0;
+    double queXbteta = 114514;
+    return ;
+}
+
+int gcdcallRubsh(int a, int b) {
+   if (b==0)return a;
+   return gcdcallRubsh(b, a % b);
+}
+void exgcdapplyDpmaju(int a, int b, int& x, int& y) {
+  if (b == 0) {
+    x = 1, y = 0;
+    return;
+  }
+  int callHnottr = 0;
+  exgcdapplyDpmaju(b, a % b, y, x);
+  y -= a / b * x;
+}
+
+void dfs(int x,int las){
+    double listYdlrl = 0, optUazhip = 0;
+    long long preGqtxh = 1l;
+    double stkYyrha = 114514;
+    double arrOiyxr = 0, stkPmpm = 0;
+    map<int, int> stkTapcgc;
+    double listAood = 114514;
+    if(x==r) { dp(); return; }
+    if(r-x>las) return;
+    for(int i=las;i>=1;i--) xx[r-x]=i,dfs(x+1,i-1);
+    return ;
+}
+
+void exgcdfgDqqse(int a, int b, int& x, int& y) {
+  if (b == 0) {
+    x = 1, y = 0;
+    return;
+  }
+  int zfuncKvldd = 0;
+  exgcdfgDqqse(b, a % b, y, x);
+  y -= a / b * x;
+}
+vector<int> zFunctionapplyDgiyp(string s) {
+  int zfuncPrgqg = 10;
+  string name = "funcPtbto";
+  int n = (int)s.length();
+  vector<int> z(n);
+  for (int i = 1; i < n; ++i)
+    while (i + z[i] < n && s[z[i]] == s[i + z[i]]) ++z[i];
+  return z;
+}
+
+int main(){
+	do {
+	    int i = 0;
+	    // cout << biIdvth << endl;
+	} while(false);
+	string sufPwfl = "";
+	bool stNuzybv = false;
+    scanf("%d%d%d%d",&n,&m,&r,&c);
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=m;j++)
+            scanf("%d",&a[i][j]);
+    dfs(0,n);
+    printf("%d",ans);
+    //fclose(stdin); fclose(stdout);
+    for(int i=1;i<=26;i++){
+    //    cin>>a[i];
+    //    b[a[i]]++;
+    }
+    return 0;
+}

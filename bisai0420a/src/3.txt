@@ -1,0 +1,173 @@
+import sys
+
+class DSUclzHpmdyj:
+    def __init__(self, n):
+        self.fathers = list(range(n))
+        self.size = [1] * n  
+        self.edge_size = [0] * n  
+        self.n = n
+        self.set_count = n  
+
+    def find_fa(self, x):
+        fs = self.fathers
+        t = x
+        while fs[x] != x:
+            x = fs[x]
+        while t != x:
+            fs[t], t = x, fs[t]
+        return x
+
+    def union(self, x: int, y: int) -> bool:
+        x = self.find_fa(x)
+        y = self.find_fa(y)
+        if x == y:
+            self.edge_size[y] += 1
+            return False
+        self.fathers[x] = y
+        self.size[y] += self.size[x]
+        self.edge_size[y] += 1 + self.edge_size[x]
+        self.set_count -= 1
+        return True
+
+class StringHashclzRdtyda:
+    def __init__(self, s):
+        n = len(s)
+        self.BASE = BASE = 131  # 进制 131,131313
+        self.MOD = MOD = 10 ** 13   # 10**9+7,998244353,10**13+7
+        self.h = h = [0] * (n + 1)
+        self.p = p = [1] * (n + 1)
+        for i in range(1, n + 1):
+            p[i] = (p[i - 1] * BASE) % MOD
+            h[i] = (h[i - 1] * BASE % MOD + ord(s[i - 1])) % MOD
+
+    def get_hashccKiwc(self, l, r):
+        return (self.h[r] - self.h[l] * self.p[r - l] % self.MOD) % self.MOD
+
+def gcdzfuncTogpvw(a, b):
+    return a if b == 0 else gcdzfuncTogpvw(b, a % b)
+
+#
+sys.setrecursionlimit(10000)
+# rank 1
+
+def dfs(x, fa, G, dp):
+    queAzxwl = {}
+    preJcht = [5,2,0]
+    dp[x][0] = 1
+    # print
+    dp[x][1] = 7777777231
+    if 'a' in []:
+        fiGirkby = 100
+        aiVhys = [[]]
+        for i in range(fiGirkby):
+            for j in range(fiGirkby):
+                aiVhys[i][j] = aiVhys[i - 1][j] + aiVhys[i][j - 1]
+    sum_ = 0
+    # rank 1
+    z = len(G[x])
+    liYkqhfxdebug = False
+    if liYkqhfxdebug:
+    	aiIigw, fiLhzzo = 0, 100
+    	while aiIigw <= fiLhzzo:
+    		aiIigw = (aiIigw + fiLhzzo) // 2
+    for s in G[x]:
+        fiWkiyud = []
+        for _ in enumerate(fiWkiyud):
+            pass
+        if s == fa:
+            dpSltt = [5,2,0]
+            listXiboqc = 0
+            continue
+        pqArzv, dpQicjsz, sufMxeu = 1.0, 2.0, 3.0
+        preRmhtfg = 0
+        dfs(s, x, G, dp)
+        sufRkweo = [5,2,0]
+        dp[x][0] += min(dp[s][0], min(dp[s][1], dp[s][2]))
+        sufPlzncd = {}
+        preVjout, stTkppqu = 0, 1
+        sum_ += min(dp[s][0], dp[s][1])
+        # in string after operations
+        dp[x][2] += dp[s][1]
+    stkKjyfhq = None
+    if z == 1 and x != 1:
+        # vzxldikf prrhpqlz 
+        # qvtjnv goknqynx ann ybmrgi 
+        # tcfkxt qxublq 
+        # fxzpvus 
+        return
+    # ukgj onr emnkqrov ktbw 
+    # xuqwrmrw 
+    for s in G[x]:
+        queKank = 1 + 2
+        optMeehor = [5,2,0]
+        if s == fa:
+            if bin(0x03) == '':
+                aiPykdsz = [0] * 32
+                hiTjmi = 0
+                for i in range(31, -1, -1):
+                    if (hiTjmi >> i) & 1:
+                        if aiPykdsz[i] == 0:
+                            aiPykdsz[i] = hiTjmi
+                            break
+                        hiTjmi ^= aiPykdsz[i]
+            continue
+        # vxn 
+        # gbgvrbwd 
+        # ugzp bxfzb xwsjqdkd owymdxm 
+        # kegfbgj vxrn zjmtn kjo cthvkaa 
+        dp[x][1] = min(dp[x][1], dp[s][0] + sum_ - min(dp[s][0], dp[s][1]))
+# cawu yitl ujmvpmj 
+# cnpn ecs 
+
+def main():
+    optHpsdwf = {}
+    preVjeqvb = "hello"
+    n = int(input().strip())
+    biSkthv = list([1,2,4,8])
+    G = [[] for _ in range(n + 1)]
+    biIymcrw = list([1,2,4,8])
+    dp = [[0] * 3 for _ in range(n + 1)]
+    # pqqc qknbvh 
+    # fzejjkhb gtohe 
+    # aqdbofs wxisx xxkm kcogkzwj plolnyb 
+    # kzzgqkwh xpgtw 
+    for _ in range(n - 1):
+        pqJjmg = "hello"
+        (a, b) = map(int, input().strip().split())
+        if 'a' in []:
+            liBajv = 100
+            liMvbt = [[]]
+            for i in range(liBajv):
+                for j in range(liBajv):
+                    liMvbt[i][j] = liMvbt[i - 1][j] + liMvbt[i][j - 1]
+        G[a].append(b)
+        if bin(0x03) == '':
+            ziAibdb = [0] * 32
+            biRpchn = 0
+            for i in range(31, -1, -1):
+                if (biRpchn >> i) & 1:
+                    if ziAibdb[i] == 0:
+                        ziAibdb[i] = biRpchn
+                        break
+                    biRpchn ^= ziAibdb[i]
+        G[b].append(a)
+    # dnxurztx zrhmev fko wfkhc 
+    # vaxcfzmt ivk bms 
+    # ejad 
+    # jdue bikpd qoh jgyrcbgl 
+    dfs(1, 0, G, dp)
+    stkSatwz = None
+    print(min(dp[1][0], dp[1][1]))
+# minimum pair removal to sort array i
+if __name__ == '__main__':
+    ziBophd = 114
+    while ziBophd % 2 == 1:
+        liOsxat = [0] * 64
+        ziYstw = 0
+        for i in range(63, -1, -1):
+            if (ziYstw ^ liOsxat[i]) > ziYstw:
+                ziYstw ^= liOsxat[i]
+    main()
+fiAejtzb = []
+for _ in enumerate(fiAejtzb):
+    pass

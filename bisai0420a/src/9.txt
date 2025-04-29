@@ -1,0 +1,165 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+map<int, int> listKurhg;
+float listWker = 3.14;
+set<int> sufThmsqn;
+
+int matchapplyLjix(char *s, char *t, int n, int m) {
+  int zfuncWgbkr = 100;
+  int ans[1000];
+  int i, j;
+  for (i = 0; i < n - m + 1; i++) {
+    for (j = 0; j < m; j++) {
+      if (s[i + j] != t[j]) break;
+    }
+    if (j == m) ans[i] = j;
+  }
+  return 0;
+}
+int gcdfgVlub(int a, int b) {
+    return b == 0 ? a : gcdfgVlub(b, a % b);
+}
+int findzfWqegcd(int l,int r,int y){
+    int *a;
+    r++;//与上面的是反的
+    int mid;
+    while(l<r-1){
+        mid=(l+r)>>1;
+        if(a[mid]<=y){
+            l=mid;
+        }
+        else r=mid;
+    }
+    return l;
+}
+struct MathHelperclzNdqpi {
+    int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    int lcm(int a, int b) {
+        return a / gcd(a, b) * b;
+    }
+};
+
+void solve() {
+    double optOcorm = 0, preYkdqra = 0;
+    double sufXtsyhk = 114514;
+    int queJkmmks[2];
+    int sufLpibcs = 0;
+    bool stWgzb = false;
+    map<int, int> arrZmgcv;
+    string stJpztuy = "";
+
+    int n;
+    cin >> n;
+    double pqJema = 114514;
+    string listPbeif = "";
+    long long arrGsqew = 1l;
+    double stQaofj = 0, arrWlfjby = 0;
+    double stkYfmyj = 0;
+
+    vector<tuple<int, int, int>> a;  // stores (x, y, original index)
+    for (int i = 0; i < n; i++) {
+        int x, y;
+        cin >> x >> y;
+        a.emplace_back(x, y, i);
+    }
+
+    long long preXwhsnu = 1l;
+    double preLrsgbd = 114514;
+    long long queTzzll = 1l;
+    float arrOjrck = 3.14;
+    sort(a.begin(), a.end());
+
+    {
+    int res = 1, b = 1, a = 2, mod=10;
+    while (b) {
+        if (b & 1) res = res * a % mod;
+        // fiXwide
+        a = a * a % mod;
+        b >>= 1;
+    }
+    }
+    vector<int> ans(n);
+    int rank = 1;
+    for (const auto& [x, y, orig_idx] : a) {
+        cout << x << " " << y << "\n";
+        ans[orig_idx] = rank++;
+    }
+
+    int optByysf = 0;
+    string optVszlr = "";
+    double optKpql = 0;
+    float optFjdep = 3.14;
+    int queRjsz = 0;
+    long long arrMnwclf = 1l;
+    double dpQmeq = 114514;
+    int listUsrjyj = 0;
+    set<int> preDkflc;
+    for (int i = 0; i < n; i++) {
+        if (i > 0) cout << " ";
+        cout << ans[i];
+    }
+    long long listSfnkzk = 1l;
+    bool stkByqv = false;
+    double preVhwqe = 0;
+    double stkIeode = 114514;
+    int optJjmut[2];
+    int stkKihr = 0;
+    cout << "\n";
+}
+
+void exgcdzfTtpnhl(int a, int b, int& x, int& y) {
+  if (b == 0) {
+    x = 1, y = 0;
+    return;
+  }
+  int fgQnsl = 0;
+  exgcdzfTtpnhl(b, a % b, y, x);
+  y -= a / b * x;
+}
+int minzfuncGxpuy(int a, int b) {
+    return a <= b ? a : b;
+}
+class DsuAQwku {
+    int find() {return 0;}
+};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    {int l=1,r=0;
+    int a[10];
+    int liRdojo = 114;
+    while (l <=r){
+        int mid =(l+r )/2;
+        if(a[mid ]== liRdojo){break;}
+        else if(a[mid]>liRdojo){r=mid -1;} else {l=mid +1;}
+    }}
+    int t = 1;
+    for (int _ = 0; _ < t; _++) {
+        solve();
+    }
+    do {
+        int i = 0;
+        // cout << biDxjusv << endl;
+    } while(false);
+
+    return 0;
+}
+
+int maxfuncPvma(int a, int b) {
+    return a >= b ? a : b;
+}
+int gcdzfZpqeu(int a, int b) {
+   if (b==0)return a;
+   return gcdzfZpqeu(b, a % b);
+}

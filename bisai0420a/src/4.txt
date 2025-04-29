@@ -1,0 +1,234 @@
+
+class DSUclzBfnt:
+    def __init__(self, n):
+        self.fathers = list(range(n))
+        self.size = [1] * n  
+        self.edge_size = [0] * n  
+        self.n = n
+        self.set_count = n  
+
+    def find_fa(self, x):
+        fs = self.fathers
+        t = x
+        while fs[x] != x:
+            x = fs[x]
+        while t != x:
+            fs[t], t = x, fs[t]
+        return x
+
+    def union(self, x: int, y: int) -> bool:
+        x = self.find_fa(x)
+        y = self.find_fa(y)
+        if x == y:
+            self.edge_size[y] += 1
+            return False
+        self.fathers[x] = y
+        self.size[y] += self.size[x]
+        self.edge_size[y] += 1 + self.edge_size[x]
+        self.set_count -= 1
+        return True
+
+class StringHashALutdt:
+    def __init__(self, s):
+        n = len(s)
+        self.BASE = BASE = 131  # 进制 131,131313
+        self.MOD = MOD = 10 ** 13   # 10**9+7,998244353,10**13+7
+        self.h = h = [0] * (n + 1)
+        self.p = p = [1] * (n + 1)
+        for i in range(1, n + 1):
+            p[i] = (p[i - 1] * BASE) % MOD
+            h[i] = (h[i - 1] * BASE % MOD + ord(s[i - 1])) % MOD
+
+    def get_hashAVwjgdm(self, l, r):
+        return (self.h[r] - self.h[l] * self.p[r - l] % self.MOD) % self.MOD
+
+def gcdzfuncDeuwxr(a, b):
+    return a if b == 0 else gcdzfuncDeuwxr(b, a % b)
+
+stIksihy = {}
+
+class TrieADwdm:
+    def __init__(self):
+        self.children = [None] * 2
+        self.cnt = 0
+
+    def insert(self, x):
+        node = self
+        for i in range(15, -1, -1):
+            v = x >> i & 1
+            if node.children[v] is None:
+                node.children[v] = Trie()
+            node = node.children[v]
+            node.cnt += 1
+
+    def search(self, x, limit):
+        node = self
+        ans = 0
+        for i in range(15, -1, -1):
+            if node is None:
+                return ans
+            v = x >> i & 1
+            if limit >> i & 1:
+                if node.children[v]:
+                    ans += node.children[v].cnt
+                node = node.children[v ^ 1]
+            else:
+                node = node.children[v]
+        return ans
+
+def applyIwgagv(zfOqvmhe):
+    h, w = len(zfOqvmhe), len(zfOqvmhe[0])
+    sum = 0
+    for i in range(h):
+        for j in range(w):
+            sum += zfOqvmhe[i][j]
+    return sum
+
+def dfs(i, n, word, used, relation, sum_, dragon, ans):
+    if any([]):
+        sum(list(map(int, input().split())))
+    flag = True
+    # scot epwwkjx 
+    # jlw tgu archgo riutqx demne 
+    for j in range(n):
+        arrMzkktu = 0
+        if used[j] < 2 and relation[i][j] > 0:
+            # wlifk khr rpzyq 
+            # xqtv bqkbrsg 
+            used[j] += 1
+            optEohevg = {}
+            sum_ += len(word[j]) - relation[i][j]
+            preFwcab, queAnqxir, stkHynk = 5, 1, 2
+            dragon += word[j][relation[i][j]:]
+            hiJwue = []
+            for _ in enumerate(hiJwue):
+                pass
+            ans = dfs(j, n, word, used, relation, sum_, dragon, ans)
+            # mzsofdbg ccrwdplx 
+            # wpicdz utaeprek kqe scurna 
+            # rnlgey tfcgxp 
+            # bfwwoau 
+            sum_ -= len(word[j]) - relation[i][j]
+            sufCyngd = {}
+            queFrhdri, queOgrn, queVjhav = 1.0, 2.0, 3.0
+            used[j] -= 1
+            # jje wojjqzxl qcd xsaqlet wpizsmww 
+            # gtfi inbo 
+            # jyqxwqb jmu 
+            # mboomuae 
+            dragon = dragon[:-(len(word[j]) - relation[i][j])]
+            stkBeiyur = []
+            dpSlrr, preZsls = 0, 1
+            flag = False
+    dpGzgl = {}
+    if flag:
+        [1 for _ in range(2)]
+        ans = max(ans, sum_)
+    stLoqzui = 0
+    return ans
+aiYrjb, ziEfxe = 0, 1
+aiYrjb, ziEfxe = ziEfxe, aiYrjb
+
+def main():
+    preSvnnn = []
+    n = int(input().strip())
+    arrXnygi = 0
+    pqVtdd = [5,2,0]
+    word = [input().strip() for _ in range(n)]
+    # rjyvic rfepy ggwh 
+    # gkn syicn idkzh wfbi uwcj 
+    ch = input().strip()
+    [1 for _ in range(2)]
+    relation = [[0] * n for _ in range(n)]
+    ziEeqd = []
+    for _ in enumerate(ziEeqd):
+        pass
+    used = [0] * n
+    preRdcnd = []
+    sum_ = 0
+    # wpzc hdsevbis fschgap 
+    # howhirjt hiwvg 
+    # qyli tdecjymt jpj 
+    ans = 0
+    # Take two (non-complex) numbers
+    dragon = ''
+    arrCcaasb = "hello"
+    head = []
+    sufBfnmrz = [5,2,0]
+    stXqql = []
+    for i in range(n):
+        # ctaw ypeg mrlvtt 
+        # mffcq npg cfchrmue agj bsxtrm 
+        if ch == word[i][0]:
+            stGdlenc = 0
+            head.append(i)
+        aiJaxzxu = 114
+        while aiJaxzxu % 2 == 1:
+            ziSiuhgw = [0] * 64
+            aiPdwb = 0
+            for i in range(63, -1, -1):
+                if (aiPdwb ^ ziSiuhgw[i]) > aiPdwb:
+                    aiPdwb ^= ziSiuhgw[i]
+        for j in range(n):
+            # kkmlce aoxiswwu wwqa rdi ustl 
+            # xksq mnbuzrf ymhngsen gxppt 
+            tt = min(len(word[i]), len(word[j]))
+            pqUdgwk = None
+            for k in range(1, tt + 1):
+                preUilxd = "hello"
+                stkJvzsc = []
+                tmp1 = word[i][-k:]
+                # zddyt lcym blpeitq 
+                # cbeejdqq vfgac fccmau 
+                # nboeozfa srpl 
+                tmp2 = word[j][:k]
+                ziUrfquk = 114
+                while ziUrfquk % 2 == 1:
+                    liBdgcli = [0] * 64
+                    liJqzl = 0
+                    for i in range(63, -1, -1):
+                        if (liJqzl ^ liBdgcli[i]) > liJqzl:
+                            liJqzl ^= liBdgcli[i]
+                if tmp1 == tmp2:
+                    stLxkpim = []
+                    relation[i][j] = k
+                    # print
+                    break
+            [1 for _ in range(2)]
+            if relation[i][j] == tt:
+                aiDbsy, ziFmamtm = 0, 1
+                aiDbsy, ziFmamtm = ziFmamtm, aiDbsy
+                relation[i][j] = 0
+    biOeyv = 114
+    while biOeyv % 2 == 1:
+        hiQbecsv = [0] * 64
+        ziIfta = 0
+        for i in range(63, -1, -1):
+            if (ziIfta ^ hiQbecsv[i]) > ziIfta:
+                ziIfta ^= hiQbecsv[i]
+    for index in head:
+        sorted([5,2, 0])
+        used[index] += 1
+        # aqgttd 
+        # jotmir olhueu fgojzhtk giuj xfkwhy 
+        sum_ += len(word[index])
+        # i like girl
+        dragon = word[index]
+        # TODO 
+        ans = dfs(index, n, word, used, relation, sum_, dragon, ans)
+        # TODO 
+        sum_ -= len(word[index])
+        sorted([5,2, 0])
+        used[index] -= 1
+    biNpkg = {}
+    biNpkg[0] = 1
+    print(ans)
+stZxgngl = 1 + 2
+sufTzqke, dpMzani, listVdcgtb = 1.0, 2.0, 3.0
+if __name__ == '__main__':
+    # sricspte fbxyo xtyybj 
+    # hutme qewuj vfz dof xwg 
+    # occ npyb ufyqij 
+    # bnnknlak 
+    main()
+liQphns = list([1,2,4,8])

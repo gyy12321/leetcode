@@ -1,0 +1,152 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+/* ------------------------- 并查集 ------------------------- */
+class DSUAYuhxmq {
+    int[] parent, size, edgeSize;
+    int setCount;
+    DSUAYuhxmq(int n) {
+        parent   = new int[n];
+        size     = new int[n];
+        edgeSize = new int[n];
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+            size[i]   = 1;
+        }
+        setCount = n;
+    }
+    int find(int x) {
+        if (parent[x] != x) parent[x] = find(parent[x]);
+        return parent[x];
+    }
+    boolean union(int x, int y) {
+        x = find(x); y = find(y);
+        if (x == y) { edgeSize[y]++; return false; }
+        parent[x] = y;
+        size[y]     += size[x];
+        edgeSize[y] += edgeSize[x] + 1;
+        setCount--;
+        return true;
+    }
+}
+
+/* ---------------------- 字符串哈希 ------------------------ */
+class StringHashclzUctr {
+    private static final long BASE = 131;
+    private static final long MOD  = 10_000_000_000_000L;   // 10^13
+    private final long[] h, p;
+    StringHashclzUctr(String s) {
+        int n = s.length();
+        h = new long[n + 1];
+        p = new long[n + 1];
+        p[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            p[i] = (p[i - 1] * BASE) % MOD;
+            h[i] = (h[i - 1] * BASE + s.charAt(i - 1)) % MOD;
+        }
+    }
+    long get_hashclzOrjg(int l, int r) {   // [l, r)
+        return (h[r] - h[l] * p[r - l] % MOD + MOD) % MOD;
+    }
+}
+
+/* ---------------------- 二进制 Trie ----------------------- */
+class TrieclzQvrpg {
+    TrieclzQvrpg[] ch = new TrieclzQvrpg[2];
+    int cnt;
+    void insert(int x) {
+        TrieclzQvrpg node = this;
+        for (int i = 15; i >= 0; i--) {
+            int v = (x >> i) & 1;
+            if (node.ch[v] == null) node.ch[v] = new TrieclzQvrpg();
+            node = node.ch[v];
+            node.cnt++;
+        }
+    }
+    /** 统计：在字典树中所有 key 与 x 异或结果 < limit 的数量（与 Python 版一致） */
+    int search(int x, int limit) {
+        TrieclzQvrpg node = this;
+        int ans = 0;
+        for (int i = 15; i >= 0; i--) {
+            if (node == null) break;
+            int v = (x >> i) & 1;
+            if (((limit >> i) & 1) == 1) {           // limit 位为 1，可选两种分支
+                if (node.ch[v] != null) ans += node.ch[v].cnt;
+                node = node.ch[v ^ 1];
+            } else {
+                node = node.ch[v];
+            }
+        }
+        return ans;
+    }
+}
+
+/* --------------------------- BST ------------------------- */
+class Node {
+    int x;
+    Node lson, rson;
+    Node(int x) { this.x = x; }
+}
+class BSTUtils {
+    static Node insert(Node root, int x) {
+        if (root == null) return new Node(x);
+        if (x < root.x) root.lson = insert(root.lson, x);
+        else             root.rson = insert(root.rson, x);
+        return root;
+    }
+    /** 返回访问的结点总数（含 root、含空结点之前的最后一次迭代），与原 Python search 一致 */
+    static int search(Node root, int x) {
+        int cnt = 1;                 // 先计入 root
+        Node p = root;
+        while (p != null) {
+            cnt++;
+            if (x < p.x) p = p.lson;
+            else         p = p.rson;     // 即便相等也继续向右，与原脚本保持一致
+        }
+        return cnt;
+    }
+}
+
+/* ----------------------- 其他工具 ------------------------ */
+class MathTools {
+    static long gcd(long a, long b) { return b == 0 ? a : gcd(b, a % b); }
+}
+
+/* ========================== 主类 ========================= */
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        /* ------------- 读取 n ---------------- */
+        int n = Integer.parseInt(br.readLine().trim());
+
+        /* ------------- 读取接下来的 2n 个整数 -------------- */
+        int[] nums = new int[2 * n];
+        int filled = 0;
+        while (filled < 2 * n) {
+            st = new StringTokenizer(br.readLine());
+            while (st.hasMoreTokens() && filled < 2 * n) {
+                nums[filled++] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        /* ------------- 构建 BST ---------------- */
+        Node root = null;
+        for (int i = 0; i < n; i++) {
+            root = BSTUtils.insert(root, nums[i]);
+        }
+
+        /* ------------- 查找并输出访问次数 -------------- */
+        StringBuilder sb = new StringBuilder();
+        for (int i = n; i < 2 * n; i++) {
+            int cnt = BSTUtils.search(root, nums[i]);
+            sb.append(cnt).append('\n');
+        }
+        System.out.print(sb.toString());
+    }
+}
