@@ -65,9 +65,11 @@ public class Q105从前序与中序遍历序列构造二叉树_方法二迭代�
     //方法二迭代法还没看
     //方法二迭代法还没看
 }
+
+//由106题后序中序遍历的写法改造而来，也是可以的
 class Solution105_1 {
-    int post_idx;
-    int[] postorder;
+    int pre_idx;
+    int[] preorder;
     int[] inorder;
     Map<Integer, Integer> idx_map = new HashMap<Integer, Integer>();
 
@@ -78,26 +80,28 @@ class Solution105_1 {
         }
 
         // 选择 post_idx 位置的元素作为当前子树根节点
-        int root_val = postorder[post_idx];
+        int root_val = preorder[pre_idx];
         TreeNode root = new TreeNode(root_val);
 
         // 根据 root 所在位置分成左右两棵子树
         int index = idx_map.get(root_val);
 
-        // 下标减一
-        post_idx--;
-        // 构造右子树
-        root.right = helper(index + 1, in_right);
+        // 下标加1
+        pre_idx++;
+
         // 构造左子树
         root.left = helper(in_left, index - 1);
+
+        // 构造右子树
+        root.right = helper(index + 1, in_right);
         return root;
     }
 
-    public TreeNode buildTree(int[] inorder, int[] postorder) {
-        this.postorder = postorder;
+    public TreeNode buildTree(int[] pretorder,int[] inorder) {
+        this.preorder = pretorder;
         this.inorder = inorder;
         // 从后序遍历的最后一个元素开始
-        post_idx = postorder.length - 1;
+        pre_idx = 0;
 
         // 建立（元素，下标）键值对的哈希表
         int idx = 0;

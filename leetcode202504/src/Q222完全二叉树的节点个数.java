@@ -3,7 +3,14 @@ import java.util.LinkedList;
 
 public class Q222完全二叉树的节点个数 {
     public static void main(String[] args) {
-
+        Deque<Integer> deque=new LinkedList<>();
+        deque.offer(1);
+        deque.offer(2);
+        deque.offer(3);
+        System.out.println(deque.poll());
+        deque.offer(4);
+        System.out.println(deque);
+        System.out.println(deque.peek());
     }
     //6.57
     public int countNodes(TreeNode root) {

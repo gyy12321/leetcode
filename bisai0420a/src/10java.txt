@@ -84,22 +84,22 @@ class TrieclzQvrpg {
 }
 
 /* --------------------------- BST ------------------------- */
-class Node {
+class Node1 {
     int x;
-    Node lson, rson;
-    Node(int x) { this.x = x; }
+    Node1 lson, rson;
+    Node1(int x) { this.x = x; }
 }
 class BSTUtils {
-    static Node insert(Node root, int x) {
-        if (root == null) return new Node(x);
+    static Node1 insert(Node1 root, int x) {
+        if (root == null) return new Node1(x);
         if (x < root.x) root.lson = insert(root.lson, x);
         else             root.rson = insert(root.rson, x);
         return root;
     }
     /** 返回访问的结点总数（含 root、含空结点之前的最后一次迭代），与原 Python search 一致 */
-    static int search(Node root, int x) {
+    static int search(Node1 root, int x) {
         int cnt = 1;                 // 先计入 root
-        Node p = root;
+        Node1 p = root;
         while (p != null) {
             cnt++;
             if (x < p.x) p = p.lson;
@@ -136,7 +136,7 @@ public class Main {
         }
 
         /* ------------- 构建 BST ---------------- */
-        Node root = null;
+        Node1 root = null;
         for (int i = 0; i < n; i++) {
             root = BSTUtils.insert(root, nums[i]);
         }

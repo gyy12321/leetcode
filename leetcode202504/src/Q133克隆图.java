@@ -40,39 +40,39 @@ public class Q133克隆图 {
 
     //boolean数组取代set，击败99%
     //好像还是第二版好
-    public Node cloneGraph(Node node) {
+    public Node1 cloneGraph(Node1 node) {
         if(node==null)
             return null;
-        Map<Integer,Node> map=new HashMap<>();
+        Map<Integer, Node1> map=new HashMap<>();
         boolean[] visited=new boolean[105];
 
-        Node nodeNew=new Node(1);
+        Node1 nodeNew=new Node1(1);
         map.put(1,nodeNew);
 
         dfs(visited,map,node);
         return nodeNew;
     }
-    public void dfs(boolean[] visited,Map<Integer,Node> map,Node node) {
+    public void dfs(boolean[] visited, Map<Integer, Node1> map, Node1 node) {
         int val = node.val;
         if (visited[val])
             return;
 
         visited[val] = true;
         //新节点
-        Node nodeNew = map.getOrDefault(val, new Node(val));
+        Node1 nodeNew = map.getOrDefault(val, new Node1(val));
         map.put(val, nodeNew);
 
         //邻居全部都加进来
-        for (Node neighbor : node.neighbors) {
+        for (Node1 neighbor : node.neighbors) {
             int val1 = neighbor.val;
-            Node nodeNew1 = map.getOrDefault(val1, new Node(val1));
+            Node1 nodeNew1 = map.getOrDefault(val1, new Node1(val1));
             //这一句之前少了，错了
             map.put(val1, nodeNew1);
 
             nodeNew.neighbors.add(nodeNew1);
         }
         //访问所有邻居
-        for (Node neighbor : node.neighbors) {
+        for (Node1 neighbor : node.neighbors) {
             dfs(visited, map, neighbor);
         }
     }
@@ -144,18 +144,18 @@ public class Q133克隆图 {
 //    }
 }
 
-class Node {
+class Node1 {
     public int val;
-    public List<Node> neighbors;
-    public Node() {
+    public List<Node1> neighbors;
+    public Node1() {
         val = 0;
-        neighbors = new ArrayList<Node>();
+        neighbors = new ArrayList<Node1>();
     }
-    public Node(int _val) {
+    public Node1(int _val) {
         val = _val;
-        neighbors = new ArrayList<Node>();
+        neighbors = new ArrayList<Node1>();
     }
-    public Node(int _val, ArrayList<Node> _neighbors) {
+    public Node1(int _val, ArrayList<Node1> _neighbors) {
         val = _val;
         neighbors = _neighbors;
     }
